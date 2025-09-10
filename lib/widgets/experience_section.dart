@@ -22,11 +22,14 @@ class ExperienceSection extends StatelessWidget {
                   Text(
                     'Experience',
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   SizedBox(height: 8),
                   Container(
-                    width: 250,
+                    width: 150,
                     height: 3,
                     color: Responsive.kPrimaryColor,
                   ),

@@ -207,7 +207,11 @@ class HomeSection extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {},
-                  child: Image.asset(ImagesPath.github, width: 30),
+                  child: Image.asset(
+                    ImagesPath.github,
+                    width: 30,
+                    color: Colors.white,
+                  ),
                 ),
                 SizedBox(width: 16),
                 InkWell(

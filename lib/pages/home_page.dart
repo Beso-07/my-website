@@ -4,6 +4,7 @@ import 'package:my_website/widgets/experience_section.dart';
 import 'package:my_website/widgets/header_section.dart';
 import 'package:my_website/widgets/home_section.dart';
 import 'package:my_website/widgets/projects_section.dart';
+import 'package:my_website/widgets/skills_section.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -31,12 +32,18 @@ class HomePage extends StatelessWidget {
                   // About Section
                   AboutSection(),
                   SizedBox(height: 32),
+
                   // Experience Section
                   ExperienceSection(),
-
                   SizedBox(height: 32),
+
                   // Project Section
                   ProjectsSection(),
+                  SizedBox(height: 32),
+
+                  // Skills Section
+                  SkillsSection(),
+                  SizedBox(height: 32),
                 ],
               ),
             ),

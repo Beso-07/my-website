@@ -30,7 +30,7 @@ class AboutSection extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Container(
-                    width: 250,
+                    width: 150,
                     height: 3,
                     color: Responsive.kPrimaryColor,
                   ),

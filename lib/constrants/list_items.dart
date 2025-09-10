@@ -1,0 +1,23 @@
+const List<Map> skillItems = [
+  {"title": "Dart", "icon": "assets/images/dart.png"},
+  {"title": "OOP", "icon": "assets/images/oop.png"},
+  {"title": "Data Dtructure", "icon": "assets/images/ds.png"},
+  {"title": "Flutter", "icon": "assets/images/flutter.png"},
+  {"title": "Bloc/Cubit", "icon": "assets/images/bloc.png"},
+  {"title": "Riverpod", "icon": "assets/images/riverpod.png"},
+  {"title": "Hive", "icon": "assets/images/hive.png"},
+  {"title": "SQlite", "icon": "assets/images/sqlite.png"},
+  {"title": "Firebase", "icon": "assets/images/firebase.png"},
+  {"title": "APIs", "icon": "assets/images/api.png"},
+  {"title": "Unit Testing", "icon": null},
+  {"title": "Widget Testing", "icon": null},
+  {"title": "Integration Testing", "icon": null},
+  {"title": "Clean Architecture", "icon": null},
+  {"title": "Clean code", "icon": null},
+
+  {"title": "Git", "icon": "assets/images/git.png"},
+  {"title": "Github", "icon": "assets/images/github.png"},
+  {"title": "VScode", "icon": "assets/images/vscode.png"},
+  {"title": "UI/UX", "icon": "assets/images/uiux.png"},
+  {"title": "Figma", "icon": "assets/images/figma.png"},
+];
