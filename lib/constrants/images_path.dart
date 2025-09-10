@@ -1,6 +1,7 @@
 class ImagesPath {
   static const String mail = "assets/images/mail.png";
   static const String github = "assets/images/github.png";
+  static const String linkedin = "assets/images/linkedin.png";
   static const String git = "assets/images/git.png";
   static const String web = "assets/images/web.png";
   static const String desktop = "assets/images/desktop.png";

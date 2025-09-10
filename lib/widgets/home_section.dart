@@ -237,10 +237,26 @@ class HomeSection extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 16),
+                InkWell(
+                  onTap:
+                      () => _launchUrl(
+                        "https://www.linkedin.com/in/ma7moud-bassem/",
+                      ),
+                  splashColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  child: Image.asset(
+                    ImagesPath.linkedin,
+                    width: 30,
+                    //color: Colors.white,
+                  ),
+                ),
+                const SizedBox(width: 16),
 
                 // Website
                 InkWell(
-                  onTap: () => _launchUrl("https://beso-07.github.io/my-website/"),
+                  onTap:
+                      () => _launchUrl("https://beso-07.github.io/my-website/"),
                   splashColor: Colors.transparent,
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
