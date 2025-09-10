@@ -21,7 +21,7 @@ Widget buildContactInfo() {
       ContactItem(
         icon: Icons.language,
         text: "mahmoud-bassem.site",
-        url: "https://mahmoud-bassem.site",
+        url: "https://beso-07.github.io/my-website/",
       ),
       SizedBox(height: 16),
       ContactItem(

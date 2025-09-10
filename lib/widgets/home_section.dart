@@ -240,7 +240,7 @@ class HomeSection extends StatelessWidget {
 
                 // Website
                 InkWell(
-                  onTap: () => _launchUrl("https://mahmoud-bassem.site"),
+                  onTap: () => _launchUrl("https://beso-07.github.io/my-website/"),
                   splashColor: Colors.transparent,
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
