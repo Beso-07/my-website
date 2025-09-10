@@ -52,9 +52,10 @@ class ProjectCard extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
             child: Text(
               project.title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
+                color: Responsive.kPrimaryColor,
                 //color: CustomColor.whitePrimary,
               ),
             ),

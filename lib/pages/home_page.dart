@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_website/widgets/about_section.dart';
+import 'package:my_website/widgets/contact_section.dart';
 import 'package:my_website/widgets/experience_section.dart';
 import 'package:my_website/widgets/header_section.dart';
 import 'package:my_website/widgets/home_section.dart';
@@ -44,6 +45,9 @@ class HomePage extends StatelessWidget {
                   // Skills Section
                   SkillsSection(),
                   SizedBox(height: 32),
+
+                  // Contact Section
+                  ContactSection(),
                 ],
               ),
             ),
