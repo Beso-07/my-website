@@ -26,15 +26,15 @@ class _ContactFormState extends State<ContactForm> {
   }
 
   void sendEmail() async {
-    String username = 'your_email@gmail.com';
-    String password = 'your_app_password';
+    String username = 'mahmoudbassem34@gmail.com';
+    String password = 'lsyl fygw yjxs rlte';
 
     final smtpServer = gmail(username, password);
 
     final message =
         Message()
           ..from = Address(username, 'Your Website')
-          ..recipients.add('mahmoudbassem@gmail.com')
+          ..recipients.add('mahmoudbassem34@gmail.com')
           ..subject = 'New Contact Message'
           ..text =
               'Name: ${nameController.text}\n'
@@ -45,6 +45,10 @@ class _ContactFormState extends State<ContactForm> {
     try {
       final sendReport = await send(message, smtpServer);
       print('Message sent: ' + sendReport.toString());
+      nameController.clear();
+      emailController.clear();
+      subjectController.clear();
+      messageController.clear();
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Message sent successfully!')),
       );
