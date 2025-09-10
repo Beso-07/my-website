@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_website/constrants/contants.dart';
 
 Widget buildContactForm() {
   return Column(
@@ -16,9 +17,7 @@ Widget buildContactForm() {
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 16),
           backgroundColor: Colors.blue,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
         child: const Text(
           "Send Message",
@@ -36,11 +35,15 @@ InputDecoration inputDecoration(String hint) {
     fillColor: Colors.white,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(8),
-      borderSide: BorderSide(color: Colors.grey.shade300),
+      borderSide: BorderSide(color: Responsive.kPrimaryColor),
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(8),
-      borderSide: BorderSide(color: Colors.grey.shade300),
+      borderSide: BorderSide(color: Colors.grey),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8),
+      borderSide: BorderSide(color: Responsive.kPrimaryColor),
     ),
   );
 }

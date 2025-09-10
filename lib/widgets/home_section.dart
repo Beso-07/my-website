@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:my_website/constrants/contants.dart';
 import 'package:my_website/constrants/images_path.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeSection extends StatelessWidget {
-  const HomeSection({super.key});
+  const HomeSection({
+    super.key,
+    required this.contactKey,
+    required this.projectsKey,
+  });
+  final GlobalKey contactKey;
+  final GlobalKey projectsKey;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +22,7 @@ class HomeSection extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Column(
           children: [
-            SizedBox(height: 80),
+            SizedBox(height: 180),
             Text(
               'Mahmoud Bassem Al-Basyouni',
               textAlign: TextAlign.center,
@@ -56,7 +63,13 @@ class HomeSection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Scrollable.ensureVisible(
+                        projectsKey.currentContext!,
+                        duration: Duration(seconds: 1),
+                        curve: Curves.easeInOut,
+                      );
+                    },
                     style: ButtonStyle(
                       fixedSize: WidgetStateProperty.all(const Size(200, 50)),
 
@@ -84,7 +97,13 @@ class HomeSection extends StatelessWidget {
 
                   SizedBox(width: 32),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Scrollable.ensureVisible(
+                        contactKey.currentContext!,
+                        duration: Duration(seconds: 1),
+                        curve: Curves.easeInOut,
+                      );
+                    },
                     style: ButtonStyle(
                       fixedSize: WidgetStateProperty.all(const Size(200, 50)),
                       backgroundColor: WidgetStateProperty.resolveWith<Color>((
@@ -205,26 +224,40 @@ class HomeSection extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // GitHub
                 InkWell(
-                  onTap: () {},
+                  onTap: () => _launchUrl("https://github.com/Beso-07"),
+                  splashColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   child: Image.asset(
                     ImagesPath.github,
                     width: 30,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
+
+                // Website
                 InkWell(
-                  onTap: () {},
+                  onTap: () => _launchUrl("https://mahmoud-bassem.site"),
+                  splashColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   child: Image.asset(
                     ImagesPath.web,
                     width: 30,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
+
+                // Email
                 InkWell(
-                  onTap: () {},
+                  onTap: () => _launchUrl("mailto:mahmoudbassem34@gmail.com"),
+                  splashColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   child: Image.asset(
                     ImagesPath.mail,
                     width: 30,
@@ -238,5 +271,12 @@ class HomeSection extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _launchUrl(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    }
   }
 }

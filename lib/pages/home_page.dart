@@ -8,17 +8,46 @@ import 'package:my_website/widgets/projects_section.dart';
 import 'package:my_website/widgets/skills_section.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  final GlobalKey homeKey = GlobalKey();
+  final GlobalKey aboutKey = GlobalKey();
+  final GlobalKey experienceKey = GlobalKey();
+  final GlobalKey projectsKey = GlobalKey();
+  final GlobalKey skillsKey = GlobalKey();
+  final GlobalKey contactKey = GlobalKey();
+
+  void scrollToSection(GlobalKey key) {
+    final context = key.currentContext;
+    if (context != null) {
+      Scrollable.ensureVisible(
+        context,
+        duration: const Duration(milliseconds: 600),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      endDrawer: mobileDrawer(context),
+    final keys = {
+      "Home": homeKey,
+      "About": aboutKey,
+      "Experience": experienceKey,
+      "Projects": projectsKey,
+      "Skills": skillsKey,
+      "Contact": contactKey,
+    };
 
+    return Scaffold(
+      endDrawer: mobileDrawer(context, scrollToSection, keys),
       body: Column(
         children: [
           // Header Section
-          SizedBox(height: 80, child: HeaderSection()),
+          SizedBox(
+            height: 80,
+            child: HeaderSection(scrollToSection: scrollToSection, keys: keys),
+          ),
 
           // Main
           Expanded(
@@ -26,28 +55,33 @@ class HomePage extends StatelessWidget {
               child: Column(
                 children: [
                   // Home Section
-                  HomeSection(),
-
-                  SizedBox(height: 32),
+                  Container(
+                    key: homeKey,
+                    child: HomeSection(
+                      contactKey: contactKey,
+                      projectsKey: projectsKey,
+                    ),
+                  ),
+                  const SizedBox(height: 64),
 
                   // About Section
-                  AboutSection(),
-                  SizedBox(height: 32),
+                  Container(key: aboutKey, child: AboutSection()),
+                  const SizedBox(height: 180),
 
                   // Experience Section
-                  ExperienceSection(),
-                  SizedBox(height: 32),
+                  Container(key: experienceKey, child: ExperienceSection()),
+                  const SizedBox(height: 32),
 
                   // Project Section
-                  ProjectsSection(),
-                  SizedBox(height: 32),
+                  Container(key: projectsKey, child: ProjectsSection()),
+                  const SizedBox(height: 64),
 
                   // Skills Section
-                  SkillsSection(),
-                  SizedBox(height: 32),
+                  Container(key: skillsKey, child: SkillsSection()),
+                  const SizedBox(height: 120),
 
                   // Contact Section
-                  ContactSection(),
+                  Container(key: contactKey, child: ContactSection()),
                 ],
               ),
             ),

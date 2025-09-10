@@ -4,11 +4,14 @@ import 'package:my_website/models/project_model.dart';
 import 'package:my_website/widgets/project_card.dart';
 
 class ProjectsSection extends StatelessWidget {
-  const ProjectsSection({super.key});
+  ProjectsSection({super.key});
+  final GlobalKey projectsKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: projectsKey,
+
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 8),
 
