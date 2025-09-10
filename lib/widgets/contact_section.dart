@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_website/widgets/contact/build_contact_form.dart';
+import 'package:my_website/widgets/contact/contact_form.dart';
 import 'package:my_website/widgets/contact/build_contact_info.dart';
 
 class ContactSection extends StatelessWidget {
@@ -39,7 +39,7 @@ class ContactSection extends StatelessWidget {
                     children: [
                       buildContactInfo(),
                       const SizedBox(height: 32),
-                      buildContactForm(),
+                      ContactForm(),
                     ],
                   )
                   : Row(
@@ -47,7 +47,7 @@ class ContactSection extends StatelessWidget {
                     children: [
                       Expanded(flex: 1, child: buildContactInfo()),
                       const SizedBox(width: 40),
-                      Expanded(flex: 2, child: buildContactForm()),
+                      Expanded(flex: 2, child: ContactForm()),
                     ],
                   ),
             ],
